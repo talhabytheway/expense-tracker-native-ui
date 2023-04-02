@@ -2,6 +2,9 @@ import {StyleSheet} from 'react-native';
 
 module.exports = StyleSheet.create({
   // font sizes
+  font32: {
+    fontSize: 32,
+  },
   font26: {
     fontSize: 26,
   },
@@ -24,17 +27,20 @@ module.exports = StyleSheet.create({
     fontSize: 12,
   },
   //   Font Variations
-  fontMedium: {
-    fontWeight: 500,
+  regular: {
+    fontFamily: 'Mulish-Regular',
   },
-  fontBold: {
-    fontWeight: 700,
+  medium: {
+    fontFamily: 'Mulish-Medium',
   },
-  fontExtraBold: {
-    fontWeight: 800,
+  eBold: {
+    fontFamily: 'Mulish-ExtraBold',
   },
-  fontBlack: {
-    fontWeight: 900,
+  bold: {
+    fontFamily: 'Mulish-Bold',
+  },
+  black: {
+    fontFamily: 'Mulish-Black',
   },
   //   colors
   fontLGreen: {
@@ -64,6 +70,9 @@ module.exports = StyleSheet.create({
   fontBlack: {
     color: '#000',
   },
+  fontGray: {
+    color: '#27272A',
+  },
   fontWhite: {
     color: '#fff',
   },
@@ -77,9 +86,6 @@ module.exports = StyleSheet.create({
   },
   bgDPink: {
     backgroundColor: '#EA827B',
-  },
-  bgGreen: {
-    backgroundColor: '#C6EDE5',
   },
   bgBlue: {
     backgroundColor: '#0C0D5B',

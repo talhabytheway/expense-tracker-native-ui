@@ -7,26 +7,23 @@
 
 import React from 'react';
 // import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  Image,
-  StyleSheet,
-  Text,
-  View,
-  ViewComponent,
-} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 const g = require('./src/styles/global');
-import MulText from './src/components/MulText';
+import Nav from './src/components/NavBar/Navbar';
+import Card from './src/components/Card/Card';
+import Send from './src/components/Send/Send';
 
 function App() {
   return (
-    <View style={[g.bgWhite, g.f1]}>
-      <SafeAreaView style={[g.bgGreen, g.f05]}>
-        <View style={g.view}>
-          <MulText style={[g.font26, g.fontBlack, g.fontDGreen]}>LMS</MulText>
-        </View>
-      </SafeAreaView>
-    </View>
+    <SafeAreaView style={[g.f1, g.bgWhite]}>
+      <View style={[g.f05]}>
+        <Nav />
+        <Card />
+      </View>
+      <View style={[g.f05]}>
+        <Send />
+      </View>
+    </SafeAreaView>
   );
 }
 
