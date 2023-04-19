@@ -2,17 +2,15 @@ import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Font from '../Font';
 import images from '../../assets';
+import Hamburger from '../../assets/svg/Hamburger';
 import s from '../../styles/global';
 const Navbar = () => {
-  console.log(images.kebab);
   return (
     <View style={[s.bgGreen, styles.navbar]}>
       <TouchableOpacity onPress={() => console.log('kek')}>
-        <Image source={images.hamburger} style={styles.hamburger} />
+        <Hamburger />
       </TouchableOpacity>
-      <Font style={[s.font24, s.fontBlue, s.black, styles.text]}>
-        My Expenses
-      </Font>
+      <Font style={[s.font24, s.fontBlue, s.black, styles.text]}>My Card</Font>
       <TouchableOpacity>
         <Image source={images.profileM} style={styles.profile} />
       </TouchableOpacity>

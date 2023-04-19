@@ -11,6 +11,9 @@ module.exports = StyleSheet.create({
   font24: {
     fontSize: 24,
   },
+  font22: {
+    fontSize: 22,
+  },
   font20: {
     fontSize: 20,
   },
@@ -55,10 +58,10 @@ module.exports = StyleSheet.create({
   fontDGray: {
     color: '#B1BCCD',
   },
-  fontLGray: {
+  fontLPink: {
     color: '#FDB2AD',
   },
-  fontDGray: {
+  fontDPink: {
     color: '#EA827B',
   },
   fontBlue: {
@@ -82,7 +85,7 @@ module.exports = StyleSheet.create({
     backgroundColor: '#C6EDE5',
   },
   bgLPink: {
-    backgroundColor: '#EA827B',
+    backgroundColor: '#FCE5CD',
   },
   bgDPink: {
     backgroundColor: '#EA827B',
@@ -98,6 +101,9 @@ module.exports = StyleSheet.create({
   },
 
   //   flex
+  f06: {
+    flex: 0.6,
+  },
   f05: {
     flex: 0.5,
   },

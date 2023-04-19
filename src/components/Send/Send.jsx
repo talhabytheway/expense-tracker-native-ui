@@ -6,32 +6,32 @@ import images from '../../assets';
 import s from '../../styles/global';
 
 const Send = () => {
-  let {send, profile1, profile2, profile3} = images;
+  let {Send, profile1, profile2, profile3} = images;
   return (
     <View style={styles.parent}>
       <View style={styles.card}>
         <TouchableOpacity>
-          <Image source={send} style={styles.profile} />
+          <Send />
         </TouchableOpacity>
-        <Font style={[s.font22, s.fontBlack, s.black, styles.text]}>Send</Font>
+        <Font style={[s.fontBlack, s.black, styles.text]}>Send</Font>
       </View>
       <View style={styles.card}>
         <TouchableOpacity>
           <Image source={profile1} style={styles.profile} />
         </TouchableOpacity>
-        <Font style={[s.font22, s.bold, s.fontGray, styles.text]}>Jenny</Font>
+        <Font style={[s.bold, s.fontGray, styles.text]}>Jenny</Font>
       </View>
       <View style={styles.card}>
         <TouchableOpacity>
           <Image source={profile2} style={styles.profile} />
         </TouchableOpacity>
-        <Font style={[s.font22, s.bold, s.fontGray, styles.text]}>Sawn</Font>
+        <Font style={[s.bold, s.fontGray, styles.text]}>Sawn</Font>
       </View>
       <View style={styles.card}>
         <TouchableOpacity>
           <Image source={profile3} style={styles.profile} />
         </TouchableOpacity>
-        <Font style={[s.font22, s.bold, s.fontGray, styles.text]}>Mittali</Font>
+        <Font style={[s.bold, s.fontGray, styles.text]}>Mittali</Font>
       </View>
     </View>
   );
@@ -42,8 +42,8 @@ export default Send;
 const styles = StyleSheet.create({
   parent: {
     flexDirection: 'row',
-    alignSelf: 'center',
     justifyContent: 'space-between',
+    alignSelf: 'center',
     width: '100%',
     maxWidth: 600,
     padding: 20,

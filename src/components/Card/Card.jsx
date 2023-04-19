@@ -4,7 +4,7 @@ import images from '../../assets';
 import Font from '../Font';
 import s from '../../styles/global';
 
-const Card = () => {
+const Card = ({navigation}) => {
   return (
     <View style={styles.parent}>
       <View style={[styles.card]}>
@@ -12,7 +12,7 @@ const Card = () => {
           $5679.34
         </Font>
         <Pressable onPress={() => console.log('add')} style={styles.btn} />
-        <Pressable onPress={() => console.log('img')}>
+        <Pressable onPress={() => navigation.navigate('Expense')}>
           <Image source={images.card} style={styles.cardImage} />
         </Pressable>
       </View>
