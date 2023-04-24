@@ -41,12 +41,13 @@ export default Send;
 
 const styles = StyleSheet.create({
   parent: {
+    backgroundColor: '#fff',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'center',
     width: '100%',
-    maxWidth: 600,
-    padding: 20,
+    maxWidth: 500,
+    padding: '3%',
   },
   card: {
     alignItems: 'center',

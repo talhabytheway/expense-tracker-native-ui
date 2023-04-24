@@ -5,6 +5,7 @@ const Calender = props => (
     xmlns="http://www.w3.org/2000/svg"
     width={38}
     height={36}
+    viewBox="0 0 38 36"
     fill="none"
     {...props}>
     <Rect width={37.4} height={35.2} x={0.4} y={0.1} fill="#F0F2FF" rx={8.8} />

@@ -8,7 +8,8 @@ const Icon = ({color = '#EA827B', type}) => (
         xmlns="http://www.w3.org/2000/svg"
         width={25}
         height={24}
-        fill="none">
+        viewBox="0 0 25 24"
+        fill="#fff">
         <Path
           fill={color}
           fillRule="evenodd"
@@ -22,7 +23,8 @@ const Icon = ({color = '#EA827B', type}) => (
         xmlns="http://www.w3.org/2000/svg"
         width={27}
         height={24}
-        fill="none">
+        viewBox="0 0 27 24"
+        fill="#fff">
         <Path
           fill={color}
           fillRule="evenodd"
@@ -36,7 +38,8 @@ const Icon = ({color = '#EA827B', type}) => (
         xmlns="http://www.w3.org/2000/svg"
         width={21}
         height={24}
-        fill="none">
+        viewBox="0 0 21 24"
+        fill="#fff">
         <Path
           fill={color}
           d="M17.365 8.148a.517.517 0 0 1-.715.195.542.542 0 0 1-.192-.73L19.285 2.6l-.892-.527-2.827 5.011a.517.517 0 0 1-.714.196.542.542 0 0 1-.192-.73l2.827-5.012-.891-.526-2.828 5.01a.517.517 0 0 1-.715.196.542.542 0 0 1-.191-.731L15.689.477 14.88 0l-3.586 6.354a3.68 3.68 0 0 0 .49 4.287L9.44 14.795l-.33-.583-3.23-5.724L1.21.208c-4.062 2.4 3.413 16.656 3.413 16.656l2.685-1.587.931 1.65-3.113 5.517a1.05 1.05 0 0 0 .37 1.417 1.002 1.002 0 0 0 1.386-.38l2.528-4.48 2.52 4.466c.287.51.924.684 1.422.39a1.08 1.08 0 0 0 .381-1.456l-3.12-5.53 2.93-5.193a3.5 3.5 0 0 0 3.872-1.71L21 3.615l-.808-.477-2.827 5.01Z"
@@ -48,6 +51,7 @@ const Icon = ({color = '#EA827B', type}) => (
         xmlns="http://www.w3.org/2000/svg"
         width={24}
         height={24}
+        viewBox="0 0 24 24"
         fill="none">
         <Path
           fill={color}

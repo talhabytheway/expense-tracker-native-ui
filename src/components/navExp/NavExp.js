@@ -21,10 +21,11 @@ const Navbar = ({navigation}) => {
 
 const styles = StyleSheet.create({
   navbar: {
+    height: '11.54%',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: 14,
+    alignItems: 'flex-end',
+    // paddingVertical: 14,
     paddingHorizontal: 16,
   },
 });

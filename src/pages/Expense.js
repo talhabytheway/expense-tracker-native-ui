@@ -13,8 +13,8 @@ const Expense = prop => {
   const [time, setTime] = useState('W');
   const [day, setDay] = useState('Fri');
   return (
-    <View>
-      <View style={styles.parent}>
+    <View style={styles.parent}>
+      <View style={styles.parentSec}>
         <NavExp {...prop} />
         <View style={styles.btnPar}>
           <Pressable onPress={() => setActive([true, false])} style={{flex: 1}}>
@@ -24,7 +24,7 @@ const Expense = prop => {
             <Button title="Income" isActive={active[1]} />
           </Pressable>
         </View>
-        <View>
+        <View style={styles.textCont}>
           <Font style={styles.text}>$5679.34</Font>
         </View>
         <View style={styles.timePar}>
@@ -40,10 +40,14 @@ const Expense = prop => {
           <Pressable onPress={() => setTime('Y')}>
             <Font style={styles.timeT(time == 'Y')}>Year</Font>
           </Pressable>
-          <Calender />
+          <View style={{justifyContent: 'space-around', maxWidth: 500}}>
+            <Calender />
+          </View>
         </View>
-        <Graph />
-        <View style={{backgroundColor: '#fff'}}>
+        <Graph style={styles.graph} />
+      </View>
+      <View style={styles.parsec}>
+        <View style={styles.catPar}>
           <View style={styles.dayPar}>
             <Pressable onPress={() => setDay('Mon')}>
               <Font style={styles.dayT(day == 'Mon')}>Mon</Font>
@@ -72,13 +76,17 @@ const Expense = prop => {
             <ArrowPink />
           </View>
         </View>
+        <ScrollView horizontal={true} style={styles.categoriesPar}>
+          <Category type="Taxi" amount="870.45" selected={true} />
+          <Category type="Health" amount="1100.50" selected={false} />
+          <Category type="Food" amount="600.43" selected={false} />
+          <Category type="Travel" amount="340.43" selected={false} />
+          <Category type="Taxi" amount="870.45" selected={false} />
+          <Category type="Health" amount="1100.50" selected={false} />
+          <Category type="Food" amount="600.43" selected={false} />
+          <Category type="Travel" amount="340.43" selected={false} />
+        </ScrollView>
       </View>
-      <ScrollView horizontal={true} style={styles.categoriesPar}>
-        <Category type="Taxi" amount="870.45" selected={true} />
-        <Category type="Health" amount="1100.50" selected={false} />
-        <Category type="Food" amount="600.43" selected={false} />
-        <Category type="Travel" amount="340.43" selected={false} />
-      </ScrollView>
     </View>
   );
 };
@@ -87,24 +95,38 @@ export default Expense;
 
 const styles = StyleSheet.create({
   parent: {
+    flex: 1,
+  },
+  parentSec: {
     backgroundColor: '#0C0D5B',
+    flex: 6,
+  },
+  parsec: {
+    backgroundColor: '#fff',
+    flex: 4,
   },
   btnPar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'center',
+    alignItems: 'center',
     paddingHorizontal: 4,
     width: '100%',
+    height: '19%',
     maxWidth: 600,
-    paddingBottom: 20,
+  },
+  textCont: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '19%',
   },
   text: {
     fontSize: 32,
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingVertical: 24,
     color: '#fff',
     borderBottomColor: '#4A4983',
+    width: '100%',
     borderBottomWidth: 1.5,
   },
   timePar: {
@@ -112,11 +134,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
+    height: '13.6%',
     paddingHorizontal: 30,
     alignSelf: 'center',
     maxWidth: 600,
-    paddingVertical: 18,
-    marginBottom: 6,
+  },
+  graph: {
+    flex: 1,
+    flexGrow: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    alignSelf: 'center',
   },
   timeT: bool => ({
     fontSize: 15,
@@ -130,7 +158,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     maxWidth: 600,
-    paddingVertical: 3,
+    height: '35%',
     paddingHorizontal: 15,
   },
   dayT: bool => ({
@@ -149,12 +177,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 14,
+    height: '65%',
     marginTop: 6,
+  },
+  catPar: {
+    height: '35%',
   },
   categoriesPar: {
     flexGrow: 1,
     flexDirection: 'row',
     backgroundColor: '#fff',
+    width: '100%',
   },
 });

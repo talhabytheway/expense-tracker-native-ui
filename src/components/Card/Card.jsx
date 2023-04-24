@@ -11,7 +11,6 @@ const Card = ({navigation}) => {
         <Font style={[s.fontWhite, s.font32, s.eBold, styles.balance]}>
           $5679.34
         </Font>
-        <Pressable onPress={() => console.log('add')} style={styles.btn} />
         <Pressable onPress={() => navigation.navigate('Expense')}>
           <Image source={images.card} style={styles.cardImage} />
         </Pressable>
@@ -28,28 +27,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexGrow: 1,
+    width: '100%',
+    // height: '100%',
   },
   card: {
-    width: 370,
+    width: '100%',
+    maxWidth: 350,
   },
   cardImage: {
-    height: 220,
-    width: 370,
+    width: '100%',
+    maxWidth: 350,
+    minWidth: 300,
     alignSelf: 'center',
     resizeMode: 'contain',
   },
   balance: {
     left: 85,
-    bottom: 75,
+    bottom: 110,
     position: 'absolute',
     zIndex: 100,
-  },
-  btn: {
-    width: 60,
-    height: 60,
-    zIndex: 100,
-    bottom: 80,
-    left: 7,
-    position: 'absolute',
   },
 });

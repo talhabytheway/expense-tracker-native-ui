@@ -1,7 +1,12 @@
 import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
 const KebabS = ({color = '#fff'}) => (
-  <Svg xmlns="http://www.w3.org/2000/svg" width={4} height={18} fill="none">
+  <Svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={4}
+    height={18}
+    viewBox="0 0 4 18"
+    fill="none">
     <Path
       fill={color}
       fillRule="evenodd"

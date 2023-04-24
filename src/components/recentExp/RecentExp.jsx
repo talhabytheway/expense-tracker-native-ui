@@ -16,6 +16,11 @@ const RecentExp = () => {
       expense: 500.43,
     },
     {
+      expName: 'Travel',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
       expName: 'Health',
       expDate: new Date().getTime(),
       expense: 550,
@@ -24,6 +29,111 @@ const RecentExp = () => {
       expName: 'Taxi',
       expDate: new Date().getTime(),
       expense: 500.43,
+    },
+    {
+      expName: 'Health',
+      expDate: new Date().getTime(),
+      expense: 550,
+    },
+    {
+      expName: 'Taxi',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Travel',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Health',
+      expDate: new Date().getTime(),
+      expense: 550,
+    },
+    {
+      expName: 'Taxi',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Travel',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Health',
+      expDate: new Date().getTime(),
+      expense: 550,
+    },
+    {
+      expName: 'Health',
+      expDate: new Date().getTime(),
+      expense: 550,
+    },
+    {
+      expName: 'Taxi',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Travel',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Health',
+      expDate: new Date().getTime(),
+      expense: 550,
+    },
+    {
+      expName: 'Taxi',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Travel',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Health',
+      expDate: new Date().getTime(),
+      expense: 550,
+    },
+    {
+      expName: 'Health',
+      expDate: new Date().getTime(),
+      expense: 550,
+    },
+    {
+      expName: 'Taxi',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Travel',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Health',
+      expDate: new Date().getTime(),
+      expense: 550,
+    },
+    {
+      expName: 'Taxi',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Travel',
+      expDate: new Date().getTime(),
+      expense: 500.43,
+    },
+    {
+      expName: 'Health',
+      expDate: new Date().getTime(),
+      expense: 550,
     },
   ];
   return (
@@ -47,7 +157,7 @@ const RecentExp = () => {
         <FlatList
           data={data}
           renderItem={({item}) => {
-            return <Item key={item.date} item={item} />;
+            return <Item key={item.expense} item={item} />;
           }}
           keyExtractor={item => item.id}
         />
@@ -62,10 +172,11 @@ const styles = StyleSheet.create({
   parent: {
     flexDirection: 'row',
     alignItems: 'center',
+    alignSelf: 'center',
     justifyContent: 'space-between',
     width: '100%',
     maxWidth: 600,
-    paddingHorizontal: 20,
+    paddingHorizontal: '3%',
     paddingVertical: 10,
   },
   recent: {},
@@ -84,8 +195,5 @@ const styles = StyleSheet.create({
   },
   close: {
     transform: [{rotateX: '180deg'}],
-  },
-  container: {
-    height: 200,
   },
 });

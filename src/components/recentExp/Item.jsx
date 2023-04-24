@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: '100%',
     maxWidth: 600,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
   },
   spaceB: {
     flexDirection: 'row',

@@ -7,8 +7,8 @@ import s from '../../styles/global';
 const Navbar = () => {
   return (
     <View style={[s.bgGreen, styles.navbar]}>
-      <TouchableOpacity onPress={() => console.log('kek')}>
-        <Hamburger />
+      <TouchableOpacity>
+        <Hamburger style={styles.hamburger} />
       </TouchableOpacity>
       <Font style={[s.font24, s.fontBlue, s.black, styles.text]}>My Card</Font>
       <TouchableOpacity>
@@ -27,8 +27,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   hamburger: {
-    height: 32,
-    width: 32,
+    alignItems: 'flex-start',
+    height: 52,
+    width: 52,
   },
   profile: {
     width: 42,
