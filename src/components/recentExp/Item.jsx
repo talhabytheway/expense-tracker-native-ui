@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: '100%',
     maxWidth: 600,
-    paddingHorizontal: 20,
+    paddingHorizontal: '3%',
     paddingVertical: 10,
   },
   spaceB: {

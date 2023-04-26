@@ -6,6 +6,7 @@ const SvgComponent = props => (
     width={5}
     height={24}
     fill="none"
+    viewBox="0 0 5 24"
     {...props}>
     <Path
       fill="#fff"

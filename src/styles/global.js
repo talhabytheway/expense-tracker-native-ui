@@ -20,6 +20,9 @@ module.exports = StyleSheet.create({
   font18: {
     fontSize: 18,
   },
+  font17: {
+    fontSize: 17,
+  },
   font16: {
     fontSize: 16,
   },

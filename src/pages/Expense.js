@@ -25,6 +25,7 @@ const Expense = prop => {
           </Pressable>
         </View>
         <View style={styles.textCont}>
+          <Font style={styles.currBal}>Current Balance</Font>
           <Font style={styles.text}>$5679.34</Font>
         </View>
         <View style={styles.timePar}>
@@ -40,7 +41,10 @@ const Expense = prop => {
           <Pressable onPress={() => setTime('Y')}>
             <Font style={styles.timeT(time == 'Y')}>Year</Font>
           </Pressable>
-          <View style={{justifyContent: 'space-around', maxWidth: 500}}>
+          <View
+            style={{
+              justifyContent: 'space-around',
+            }}>
             <Calender />
           </View>
         </View>
@@ -112,36 +116,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 4,
     width: '100%',
-    height: '19%',
+    height: '17%',
     maxWidth: 600,
   },
   textCont: {
     alignItems: 'center',
-    justifyContent: 'center',
-    height: '19%',
+    justifyContent: 'space-evenly',
+    height: '22%',
+    borderBottomColor: '#4A4983',
+    borderBottomWidth: 1.5,
+  },
+  currBal: {
+    fontSize: 17,
+    fontFamily: 'Mulish-Black',
+    textAlign: 'center',
+    color: '#BFBFD3',
   },
   text: {
-    fontSize: 32,
+    fontSize: 33,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#fff',
-    borderBottomColor: '#4A4983',
-    width: '100%',
-    borderBottomWidth: 1.5,
   },
   timePar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
-    height: '13.6%',
-    paddingHorizontal: 30,
+    height: '13%',
+    paddingHorizontal: '7%',
     alignSelf: 'center',
     maxWidth: 600,
   },
   graph: {
-    flex: 1,
-    flexGrow: 1,
+    // flexGrow: 1,
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     alignSelf: 'center',

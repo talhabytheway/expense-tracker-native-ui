@@ -30,10 +30,10 @@ const styles = StyleSheet.create({
     paddingTop: 22,
     paddingBottom: 26,
     backgroundColor: selected ? '#FDB2AD' : '#fff',
-    height: '82%',
+    height: '85%',
     maxHeight: 250,
     width: '25%',
-    maxWidth: 150,
+    maxWidth: 175,
     borderRadius: 22,
     marginHorizontal: 10,
     marginTop: '1%',
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   type: selected => ({
     fontSize: 16,
     fontFamily: 'Mulish-Black',
-    marginBottom: 10,
+    marginBottom: '3.5%',
     color: selected ? '#0C0D5B' : '#27272A',
   }),
   amount: selected => ({

@@ -139,11 +139,11 @@ const RecentExp = () => {
   return (
     <View>
       <View style={[styles.parent]}>
-        <Font style={[styles.heading, s.bold, s.font26, s.fontBlack]}>
+        <Font style={[styles.heading, s.bold, s.font24, s.fontBlack]}>
           Recent Expenses
         </Font>
         <Pressable style={styles.arrowCont} onPress={() => setIsOpen(!isOpen)}>
-          <Font style={[styles.recent, s.font18, s.medium, s.fontBlack]}>
+          <Font style={[styles.recent, s.font17, s.medium, s.fontBlack]}>
             Recent
           </Font>
 

@@ -8,7 +8,7 @@ const Button = ({title, isActive}) => {
   return (
     <View style={styles.par(isActive)}>
       <View style={styles.pad1(isActive)}>
-        <Font style={[s.eBold, s.font24, styles.text(isActive), styles.child]}>
+        <Font style={[s.eBold, s.font22, styles.text(isActive), styles.child]}>
           {title}
         </Font>
       </View>
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   }),
   child: {
-    paddingVertical: 12,
+    paddingVertical: '6%',
     backgroundColor: '#0C0D5B',
     borderRadius: 100,
   },
