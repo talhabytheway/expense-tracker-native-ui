@@ -1,13 +1,14 @@
 import * as React from 'react';
-import Svg, {G, Path, Defs} from 'react-native-svg';
+import Svg, {Path} from 'react-native-svg';
+let {widthPixel} = ratios;
 
 const Icon = ({color = '#EA827B', type}) => (
   <>
     {type == 'Taxi' && (
       <Svg
         xmlns="http://www.w3.org/2000/svg"
-        width={25}
-        height={24}
+        width={widthPixel(25)}
+        height={widthPixel(24)}
         viewBox="0 0 25 24"
         fill="#fff">
         <Path
@@ -21,8 +22,8 @@ const Icon = ({color = '#EA827B', type}) => (
     {type == 'Health' && (
       <Svg
         xmlns="http://www.w3.org/2000/svg"
-        width={27}
-        height={24}
+        width={widthPixel(27)}
+        height={widthPixel(24)}
         viewBox="0 0 27 24"
         fill="#fff">
         <Path
@@ -36,8 +37,8 @@ const Icon = ({color = '#EA827B', type}) => (
     {type == 'Food' && (
       <Svg
         xmlns="http://www.w3.org/2000/svg"
-        width={21}
-        height={24}
+        width={widthPixel(21)}
+        height={widthPixel(24)}
         viewBox="0 0 21 24"
         fill="#fff">
         <Path
@@ -49,8 +50,8 @@ const Icon = ({color = '#EA827B', type}) => (
     {type == 'Travel' && (
       <Svg
         xmlns="http://www.w3.org/2000/svg"
-        width={24}
-        height={24}
+        width={widthPixel(24)}
+        height={widthPixel(24)}
         viewBox="0 0 24 24"
         fill="none">
         <Path

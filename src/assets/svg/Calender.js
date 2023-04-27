@@ -1,10 +1,14 @@
 import * as React from 'react';
 import Svg, {Rect, Path} from 'react-native-svg';
+import ratios from '../../styles/ratios';
+
+let {widthPixel, heightPixel} = ratios;
+
 const Calender = props => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
-    width={38}
-    height={36}
+    width={widthPixel(38)}
+    height={widthPixel(36)}
     viewBox="0 0 38 36"
     fill="none"
     {...props}>

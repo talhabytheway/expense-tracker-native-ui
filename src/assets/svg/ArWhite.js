@@ -1,10 +1,14 @@
 import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
+import ratios from '../../styles/ratios';
+
+let {widthPixel, heightPixel} = ratios;
+
 const ArWhite = props => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
-    width={14}
-    height={22}
+    width={widthPixel(14)}
+    height={widthPixel(22)}
     viewBox="0 0 14 22"
     fill="none"
     {...props}>

@@ -1,10 +1,14 @@
 import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
-const SvgComponent = props => (
+import ratios from '../../styles/ratios';
+
+let {widthPixel, heightPixel} = ratios;
+
+const Kebab = props => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
-    width={5}
-    height={24}
+    width={widthPixel(5)}
+    height={widthPixel(24)}
     fill="none"
     viewBox="0 0 5 24"
     {...props}>
@@ -20,4 +24,4 @@ const SvgComponent = props => (
     />
   </Svg>
 );
-export default SvgComponent;
+export default Kebab;

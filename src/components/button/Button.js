@@ -1,17 +1,31 @@
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, ImageBackground} from 'react-native';
 import React from 'react';
 import s from '../../styles/global';
 
 import Font from '../Font';
+import ratios from '../../styles/ratios';
+import bgbtn from '../../assets/images/bgBtn.png';
+
+let {
+  widthPixel,
+  heightPixel,
+  fontPixel,
+  pixelSizeVertical,
+  pixelSizeHorizontal,
+} = ratios;
 
 const Button = ({title, isActive}) => {
   return (
-    <View style={styles.par(isActive)}>
-      <View style={styles.pad1(isActive)}>
-        <Font style={[s.eBold, s.font22, styles.text(isActive), styles.child]}>
+    <View>
+      <ImageBackground
+        style={styles.bg}
+        resizeMode="contain"
+        imageStyle={title == 'Income' && {transform: [{scaleX: -1}]}}
+        source={isActive && bgbtn}>
+        <Font style={[s.eBold, styles.text(isActive), styles.child]}>
           {title}
         </Font>
-      </View>
+      </ImageBackground>
     </View>
   );
 };
@@ -19,21 +33,16 @@ const Button = ({title, isActive}) => {
 export default Button;
 
 const styles = StyleSheet.create({
-  par: isActive => ({
-    padding: 0.5,
-  }),
   text: isActive => ({
     color: isActive ? '#fff' : '#7098A5',
     textAlign: 'center',
+    fontSize: fontPixel(19),
+    paddingVertical: heightPixel(10),
   }),
-  child: {
-    paddingVertical: '6%',
-    backgroundColor: '#0C0D5B',
-    borderRadius: 100,
+  bg: {
+    height: heightPixel(70),
+    width: widthPixel(200),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  pad1: isActive => ({
-    padding: 0.3,
-    borderRadius: 100,
-    backgroundColor: isActive ? '#eee' : '#0C0D5B',
-  }),
 });

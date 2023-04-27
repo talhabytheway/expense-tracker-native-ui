@@ -1,5 +1,11 @@
-import {Pressable, View, ScrollView, StyleSheet} from 'react-native';
-import React, {useState} from 'react';
+import {
+  Pressable,
+  View,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useState, useRef} from 'react';
 import NavExp from '../components/navExp/NavExp';
 import Button from '../components/button/Button';
 import Font from '../components/Font';
@@ -7,11 +13,21 @@ import Calender from '../assets/svg/Calender';
 import Graph from '../assets/svg/Graph';
 import ArrowPink from '../assets/svg/ArrowPink';
 import Category from '../components/Category/Category';
+import ratios from '../styles/ratios';
+
+let {widthPixel, heightPixel, fontPixel} = ratios;
 
 const Expense = prop => {
   const [active, setActive] = useState([true, false]);
   const [time, setTime] = useState('W');
   const [day, setDay] = useState('Fri');
+  let positionY = 0;
+  const scrollViewRef = useRef();
+
+  const handleScrollTo = () => {
+    positionY += 170;
+    scrollViewRef.current.scrollTo({x: positionY, animated: true});
+  };
   return (
     <View style={styles.parent}>
       <View style={styles.parentSec}>
@@ -77,10 +93,21 @@ const Expense = prop => {
           </View>
           <View style={styles.categoryPar}>
             <Font style={styles.category}>Categories</Font>
-            <ArrowPink />
+            <TouchableOpacity onPress={() => handleScrollTo()}>
+              <ArrowPink />
+            </TouchableOpacity>
           </View>
         </View>
-        <ScrollView horizontal={true} style={styles.categoriesPar}>
+        <ScrollView
+          horizontal={true}
+          contentContainerStyle={{alignItems: 'center'}}
+          showsHorizontalScrollIndicator={false}
+          scrollEventThrottle={2000}
+          onScroll={event => {
+            positionY = event.nativeEvent.contentOffset.x;
+          }}
+          ref={scrollViewRef}
+          style={styles.categoriesPar}>
           <Category type="Taxi" amount="870.45" selected={true} />
           <Category type="Health" amount="1100.50" selected={false} />
           <Category type="Food" amount="600.43" selected={false} />
@@ -103,59 +130,52 @@ const styles = StyleSheet.create({
   },
   parentSec: {
     backgroundColor: '#0C0D5B',
-    flex: 6,
+    flex: 6.2,
   },
   parsec: {
     backgroundColor: '#fff',
-    flex: 4,
+    flex: 3.8,
   },
   btnPar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'center',
     alignItems: 'center',
-    paddingHorizontal: 4,
+    paddingHorizontal: widthPixel(4),
     width: '100%',
-    height: '17%',
-    maxWidth: 600,
+    height: '19%',
   },
   textCont: {
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     height: '22%',
     borderBottomColor: '#4A4983',
-    borderBottomWidth: 1.5,
+    borderBottomWidth: widthPixel(1.5),
   },
   currBal: {
-    fontSize: 17,
+    fontSize: fontPixel(20),
     fontFamily: 'Mulish-Black',
     textAlign: 'center',
     color: '#BFBFD3',
   },
   text: {
-    fontSize: 33,
-    fontWeight: 'bold',
+    fontSize: fontPixel(41),
+    fontFamily: 'Mulish-Bold',
     textAlign: 'center',
     color: '#fff',
+    marginBottom: heightPixel(20),
   },
   timePar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
-    height: '13%',
-    paddingHorizontal: '7%',
-    alignSelf: 'center',
-    maxWidth: 600,
-  },
-  graph: {
-    // flexGrow: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
+    height: '12%',
+    paddingHorizontal: widthPixel(40),
     alignSelf: 'center',
   },
   timeT: bool => ({
-    fontSize: 15,
+    fontSize: fontPixel(17),
     color: bool ? '#FDB2AD' : '#C6EDE5',
     fontFamily: bool ? 'Mulish-Black' : 'Mulish-Bold',
   }),
@@ -165,28 +185,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     alignSelf: 'center',
-    maxWidth: 600,
-    height: '35%',
-    paddingHorizontal: 15,
+    paddingHorizontal: widthPixel(15),
   },
   dayT: bool => ({
-    padding: 5,
-    fontSize: bool ? 16 : 14,
+    paddingVertical: heightPixel(5),
+    fontSize: bool ? fontPixel(18) : fontPixel(16),
     color: bool ? '#0C0D5B' : '#B1BCCD',
     fontFamily: bool ? 'Mulish-Black' : 'Mulish-Regular',
   }),
   category: {
     fontFamily: 'Mulish-Bold',
-    fontSize: 26,
+    fontSize: fontPixel(28),
     color: '#27272A',
   },
   categoryPar: {
     flexDirection: 'row',
-    paddingHorizontal: 15,
+    paddingHorizontal: widthPixel(15),
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '65%',
-    marginTop: 6,
+    marginTop: heightPixel(6),
   },
   catPar: {
     height: '35%',
@@ -194,6 +212,7 @@ const styles = StyleSheet.create({
   categoriesPar: {
     flexGrow: 1,
     flexDirection: 'row',
+    // alignItems: 'center',
     backgroundColor: '#fff',
     width: '100%',
   },

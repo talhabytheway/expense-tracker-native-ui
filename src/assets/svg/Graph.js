@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {Dimensions} from 'react-native';
+// import {Dimensions} from 'react-native';
 
 import Svg, {
   Path,
@@ -10,29 +10,17 @@ import Svg, {
   Stop,
   ClipPath,
 } from 'react-native-svg';
-const windowDimensions = Dimensions.get('window');
-const screenDimensions = Dimensions.get('screen');
+import ratios from '../../styles/ratios';
+
+let {widthPixel} = ratios;
 
 const Graph = props => {
-  const [{window, screen}, setDimensions] = useState({
-    window: windowDimensions,
-    screen: screenDimensions,
-  });
-
-  useEffect(() => {
-    const subscription = Dimensions.addEventListener(
-      'change',
-      ({window, screen}) => {
-        setDimensions({window, screen});
-      },
-    );
-    return () => subscription?.remove();
-  });
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width={'100%'}
-      height={window.height}
+      width={widthPixel(414)}
+      height={widthPixel(195)}
+      viewBox="0 0 414 195"
       fill="none"
       {...props}>
       <Path fill="#0C0D5B" d="M0 0h412v189H0z" />

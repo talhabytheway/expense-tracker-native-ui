@@ -1,10 +1,12 @@
 import * as React from 'react';
 import Svg, {Circle, Path} from 'react-native-svg';
+import ratios from '../../styles/ratios';
+let {widthPixel, heightPixel} = ratios;
 const SvgComponent = props => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
-    width={20}
-    height={20}
+    width={widthPixel(20)}
+    height={heightPixel(20)}
     viewBox="0 0 20 20"
     fill="none">
     <Circle

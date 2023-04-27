@@ -1,10 +1,14 @@
 import * as React from 'react';
 import Svg, {G, Rect, Path, Defs, ClipPath} from 'react-native-svg';
+import ratios from '../../styles/ratios';
+
+let {widthPixel, heightPixel} = ratios;
+
 const ArrowPink = props => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
-    width={36}
-    height={36}
+    width={widthPixel(36)}
+    height={widthPixel(36)}
     viewBox="0 0 36 36"
     fill="none"
     {...props}>

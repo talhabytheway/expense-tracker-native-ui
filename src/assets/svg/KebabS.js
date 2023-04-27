@@ -1,10 +1,14 @@
 import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
+import ratios from '../../styles/ratios';
+
+let {widthPixel, heightPixel} = ratios;
+
 const KebabS = ({color = '#fff'}) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
-    width={4}
-    height={18}
+    width={widthPixel(4)}
+    height={widthPixel(18)}
     viewBox="0 0 4 18"
     fill="none">
     <Path

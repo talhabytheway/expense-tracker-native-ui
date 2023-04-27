@@ -6,19 +6,17 @@ import Icon from '../../assets/svg/Icon';
 
 import Font from '../Font';
 import s from '../../styles/global';
-import {useState} from 'react';
-import {useEffect} from 'react';
+import ratios from '../../styles/ratios';
+
+let {
+  widthPixel,
+  heightPixel,
+  fontPixel,
+  pixelSizeVertical,
+  pixelSizeHorizontal,
+} = ratios;
 
 const Item = ({item}) => {
-  const [date, setDate] = useState();
-  useEffect(() => {
-    const date = new Date(item.expDate);
-    const options = {day: 'numeric', month: 'short', year: 'numeric'};
-    const dateString = date.toLocaleDateString('en-US', options);
-    const timeOptions = {hour: 'numeric', minute: 'numeric', hour12: true};
-    const timeString = date.toLocaleTimeString('en-US', timeOptions);
-    setDate(`${dateString}, ${timeString}`);
-  }, []);
   return (
     <View style={[styles.parent, styles.spaceB]}>
       <View style={[styles.imgC, s.bgLPink]}>
@@ -26,14 +24,20 @@ const Item = ({item}) => {
       </View>
       <View style={styles.textContP}>
         <View style={[styles.spaceB]}>
-          <Font style={[s.font20, s.eBold, s.fontGray]}>{item.expName}</Font>
-          <Font style={[s.font22, s.eBold, s.fontLPink]}>-${item.expense}</Font>
+          <Font style={[styles.expName, s.eBold, s.fontGray]}>
+            {item.expName}
+          </Font>
+          <Font style={[styles.expense, s.eBold, s.fontLPink]}>
+            -${item.expense}
+          </Font>
         </View>
         <View style={(styles.textC, styles.spaceB)}>
-          <Font style={[s.fontDGray, s.bold]}>{date}</Font>
+          <Font style={[styles.expDate, s.fontDGray, s.bold]}>
+            {item.expDate}
+          </Font>
           <View style={styles.spendC}>
             <Arrow />
-            <Font style={[s.fontDGreen, s.bold]}>Spend</Font>
+            <Font style={[styles.expDate, s.fontDGreen, s.bold]}>Spend</Font>
           </View>
         </View>
       </View>
@@ -47,25 +51,19 @@ const styles = StyleSheet.create({
   parent: {
     alignSelf: 'center',
     width: '100%',
-    maxWidth: 600,
-    paddingHorizontal: '3%',
-    paddingVertical: 10,
+    paddingHorizontal: widthPixel(20),
+    paddingVertical: heightPixel(15),
   },
   spaceB: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-
-  hui: {
-    width: 25,
-    height: 25,
-  },
   imgC: {
-    width: 60,
-    height: 60,
+    width: widthPixel(60),
+    height: widthPixel(60),
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 14,
+    borderRadius: widthPixel(14),
   },
   spendC: {
     flexDirection: 'row',
@@ -73,7 +71,16 @@ const styles = StyleSheet.create({
   },
   textContP: {
     flexGrow: 1,
-    paddingLeft: 10,
+    paddingLeft: widthPixel(10),
     justifyContent: 'space-around',
+  },
+  expName: {
+    fontSize: fontPixel(22),
+  },
+  expDate: {
+    fontSize: fontPixel(14),
+  },
+  expense: {
+    fontSize: fontPixel(23),
   },
 });

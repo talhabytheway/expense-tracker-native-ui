@@ -11,6 +11,7 @@ import foodG from './images/foodG.png';
 import foodP from './images/foodP.png';
 import graph from './images/graph.png';
 import hamburger from './images/hamburger.png';
+import oval from './images/oval.png';
 
 import card from './images/card.png';
 
@@ -23,6 +24,7 @@ let images = {
   profile1,
   profile2,
   profile3,
+  oval,
   add,
   arrowD,
   arrowR,
