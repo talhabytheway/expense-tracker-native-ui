@@ -29,16 +29,7 @@ const Card = ({navigation}) => {
           <Image source={images.card} style={styles.cardImage} />
         </Pressable>
       </View>
-      <ImageBackground
-        style={styles.shadow}
-        blurRadius={10}
-        source={images.oval}
-      />
-      <ImageBackground
-        style={styles.shadow}
-        blurRadius={10}
-        source={images.oval}
-      />
+      <ImageBackground style={styles.shadow} source={images.oval} />
     </View>
   );
 };
@@ -58,26 +49,26 @@ const styles = StyleSheet.create({
   },
 
   cardImage: {
-    width: '100%',
-    maxWidth: widthPixel(370),
-    height: heightPixel(250),
+    // width: '100%',
+    width: widthPixel(390),
+    height: heightPixel(270),
     alignSelf: 'center',
     resizeMode: 'contain',
   },
   balance: {
     fontSize: fontPixel(28),
     left: widthPixel(105),
-    bottom: heightPixel(90),
+    bottom: heightPixel(100),
     position: 'absolute',
     zIndex: 100,
   },
 
   shadow: {
-    width: '100%',
+    width: widthPixel(390),
     height: heightPixel(150),
     position: 'absolute',
     flex: 1,
-    alignItems: 'center',
+    alignSelf: 'center',
     justifyContent: 'center',
     resizeMode: 'contain',
     zIndex: -10,
